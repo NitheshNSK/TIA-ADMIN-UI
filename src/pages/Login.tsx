@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -30,6 +31,8 @@ function LoginSwiper() {
   );
 }
 export default function Login() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-bg text-text flex">
       {/* Left Side Form */}
@@ -46,7 +49,7 @@ export default function Login() {
             <label className="block text-sm mb-2">Email address</label>
             <input
               type="email"
-              className="w-full px-4 py-3 rounded-lg bg-input border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3 rounded-lg bg-input border border-border focus:outline-none focus:ring-2 focus:ring-primary outline-none"
             />
           </div>
 
@@ -55,7 +58,7 @@ export default function Login() {
             <label className="block text-sm mb-2">Password</label>
             <input
               type="password"
-              className="w-full px-4 py-3 rounded-lg bg-input border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3 rounded-lg bg-input border border-border focus:outline-none focus:ring-2 focus:ring-primary outline-none"
             />
           </div>
 
@@ -66,11 +69,14 @@ export default function Login() {
               Remember me
             </label>
 
-            <a className="text-primary hover:underline">Forgot password?</a>
+            <a className="text-primary hover:underline cursor-pointer">Forgot password?</a>
           </div>
 
           {/* Button */}
-          <button className="w-full py-3 rounded-lg bg-primary text-white font-semibold">
+          <button 
+            onClick={() => navigate("/dashboard")}
+            className="w-full py-3 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition-opacity"
+          >
             Sign in
           </button>
 

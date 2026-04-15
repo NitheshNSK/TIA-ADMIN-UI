@@ -10,6 +10,8 @@ import {
   Wallet,
   Image,
   Settings,
+  Activity,
+  MessageSquare,
 } from "lucide-react";
 
 export const menu = [
@@ -23,6 +25,8 @@ export const menu = [
   { name: "Students", icon: UserPlus, path: "/students" },
   { name: "Accounts", icon: Wallet, path: "/accounts" },
   { name: "Media", icon: Image, path: "/media" },
+  { name: "CRM", icon: Activity, path: "/crm" },
+  { name: "CEO MESSAGES", icon: MessageSquare, path: "/ceo-messages" },
 ];
 
 export const bottomMenu = [
