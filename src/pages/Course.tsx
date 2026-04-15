@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Download, Trash2, Pencil } from "lucide-react";
+import { Download, Trash2, Pencil } from "lucide-react";
 import AppLayout from "../components/layout/AppLayout";
 
 /* -------------------------------- */

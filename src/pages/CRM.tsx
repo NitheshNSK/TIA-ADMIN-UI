@@ -9,12 +9,10 @@ import {
   Mail, 
   Calendar, 
   Clock, 
-  User, 
-  CheckCircle2, 
-  AlertCircle,
   TrendingUp,
   X,
-  Plus
+  Plus,
+  Activity
 } from "lucide-react";
 
 export default function CRM() {

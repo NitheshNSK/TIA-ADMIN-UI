@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bell, MessageSquare, X, User, Send } from "lucide-react";
+import { Bell, MessageSquare, X, Send } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Topbar() {

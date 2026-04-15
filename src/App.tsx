@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import "./App.css";
-import { useTheme } from "./context/ThemeProvider";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Concept from "./pages/Concept";
@@ -21,7 +18,6 @@ import CEOMessages from "./pages/CEOMessages";
 import Settings from "./pages/Settings";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>

@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { 
   TrendingUp, 
-  Users, 
-  Target, 
   Activity, 
-  ChevronDown, 
   ArrowUpRight, 
   ArrowDownRight,
   Filter,
-  Calendar,
   LayoutDashboard
 } from "lucide-react";
 import AppLayout from "../components/layout/AppLayout";
@@ -17,9 +13,7 @@ import {
   BarChart, Bar, 
   RadarChart, PolarGrid, PolarAngleAxis, Radar,
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
-  Cell, 
-  PieChart, 
-  Pie
+  Cell
 } from 'recharts';
 
 export default function Dashboard() {
@@ -156,7 +150,7 @@ export default function Dashboard() {
                             <XAxis dataKey="name" fontSize={11} stroke="var(--text-muted)" axisLine={false} tickLine={false} />
                             <Tooltip contentStyle={{ background: 'var(--bg-card)', borderColor: 'var(--border)', borderRadius: '12px' }} />
                             <Bar dataKey="value" radius={[6, 6, 0, 0]} barSize={40}>
-                                {regionalData.map((e, i) => (
+                                {regionalData.map((_, i) => (
                                     <Cell key={i} fill={i % 2 === 0 ? 'var(--primary)' : '#818cf8'} />
                                 ))}
                             </Bar>
