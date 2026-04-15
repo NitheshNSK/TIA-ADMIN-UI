@@ -33,8 +33,8 @@ export default function Settings() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* TABS SIDEBAR */}
-          <div className="w-full lg:w-64 space-y-2">
+          {/* TABS SIDEBAR - SCROLLABLE ON MOBILE */}
+          <div className="flex lg:flex-col overflow-x-auto no-scrollbar lg:overflow-visible lg:w-64 gap-2 pb-4 lg:pb-0">
             {[
               { id: "General", icon: Globe, label: "General" },
               { id: "Email", icon: Mail, label: "Email Templates" },
@@ -45,10 +45,10 @@ export default function Settings() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                className={`flex items-center gap-3 px-6 lg:px-4 py-3 rounded-2xl text-sm font-bold transition-all whitespace-nowrap ${
                   activeTab === tab.id 
                     ? "bg-[var(--primary)] text-white shadow-lg" 
-                    : "text-[var(--text-muted)] hover:bg-[var(--bg-soft)]"
+                    : "text-[var(--text-muted)] hover:bg-[var(--bg-soft)] bg-[var(--bg-soft)]/50 lg:bg-transparent"
                 }`}
               >
                 <tab.icon size={18} />

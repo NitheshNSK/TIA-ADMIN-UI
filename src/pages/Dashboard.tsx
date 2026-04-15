@@ -82,7 +82,7 @@ export default function Dashboard() {
         {/* MAIN VISUALIZATION ROW */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* LARGE GROWTH CHART */}
-            <div className="lg:col-span-2 bg-[var(--bg-card)] p-8 rounded-3xl border shadow-sm" style={{ borderColor: 'var(--border)' }}>
+            <div className="lg:col-span-2 bg-[var(--bg-card)] p-4 md:p-8 rounded-3xl border shadow-sm" style={{ borderColor: 'var(--border)' }}>
                  <div className="flex justify-between items-center mb-8">
                     <div>
                         <h3 className="font-bold text-lg mb-1">Growth Dynamics</h3>
@@ -92,7 +92,7 @@ export default function Dashboard() {
                         <Filter size={18} className="text-[var(--text-muted)]" />
                     </button>
                  </div>
-                 <div className="h-[350px] w-full">
+                 <div className="h-[250px] md:h-[350px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
                         <AreaChart data={growthData}>
                             <defs>

@@ -9,7 +9,8 @@ import {
   Hash, 
   Paperclip,
   Smile,
-  MessageSquare
+  MessageSquare,
+  ChevronLeft
 } from "lucide-react";
 
 export default function CEOMessages() {
@@ -33,10 +34,13 @@ export default function CEOMessages() {
 
   return (
     <AppLayout>
-      <div className="flex h-[calc(100vh-8rem)] bg-[var(--bg-card)] rounded-3xl border shadow-sm overflow-hidden" style={{ borderColor: 'var(--border)' }}>
+      <div className="flex h-[calc(100vh-8rem)] bg-[var(--bg-card)] rounded-3xl border shadow-sm overflow-hidden relative" style={{ borderColor: 'var(--border)' }}>
         
         {/* CHAT LIST SIDEBAR */}
-        <div className="w-80 border-r flex flex-col" style={{ borderColor: 'var(--border)' }}>
+        <div className={`
+            w-full lg:w-80 border-r flex flex-col bg-[var(--bg-card)] transition-all duration-300
+            ${selectedChat ? 'hidden lg:flex' : 'flex'}
+        `} style={{ borderColor: 'var(--border)' }}>
           <div className="p-6 border-b" style={{ borderColor: 'var(--border)' }}>
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-bold">Communications</h2>
@@ -98,8 +102,14 @@ export default function CEOMessages() {
         <div className="flex-1 flex flex-col bg-[var(--bg-soft)]/20">
             {selectedChat ? (
                 <>
-                    <div className="p-6 bg-[var(--bg-card)] border-b flex justify-between items-center" style={{ borderColor: 'var(--border)' }}>
+                    <div className="p-4 md:p-6 bg-[var(--bg-card)] border-b flex justify-between items-center" style={{ borderColor: 'var(--border)' }}>
                         <div className="flex items-center gap-4">
+                            <button 
+                                onClick={() => setSelectedChat(null)}
+                                className="lg:hidden p-2 hover:bg-[var(--bg-soft)] rounded-xl transition-colors"
+                            >
+                                <ChevronLeft size={20} />
+                            </button>
                             <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${activeTab === 'Direct' ? 'bg-indigo-500/10 text-indigo-500' : 'bg-pink-500/10 text-pink-500'}`}>
                                 {activeTab === 'Direct' ? <User size={18}/> : <Hash size={18}/>}
                             </div>

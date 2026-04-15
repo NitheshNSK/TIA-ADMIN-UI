@@ -67,8 +67,8 @@ export default function CRM() {
                         </div>
                     </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left">
+                    <div className="overflow-x-auto no-scrollbar">
+                        <table className="w-full text-left min-w-[700px]">
                             <thead className="bg-[var(--bg-soft)]/50">
                                 <tr className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)]">
                                     <th className="px-6 py-4">Lead Detail</th>
@@ -126,7 +126,7 @@ export default function CRM() {
 
             {/* PROFILE SIDEBAR */}
             {selectedLead && (
-                <div className="w-96 bg-[var(--bg-card)] rounded-3xl border shadow-xl flex flex-col overflow-hidden animate-in slide-in-from-right duration-500" style={{ borderColor: 'var(--border)' }}>
+                <div className="fixed inset-y-0 right-0 w-full md:w-96 bg-[var(--bg-card)] shadow-2xl z-[150] flex flex-col overflow-hidden animate-in slide-in-from-right duration-500 lg:relative lg:z-0 lg:rounded-3xl lg:border lg:shadow-xl" style={{ borderColor: 'var(--border)' }}>
                     <div className="p-6 border-b flex justify-between items-center" style={{ borderColor: 'var(--border)' }}>
                         <h3 className="font-bold">Lead Insight</h3>
                         <button onClick={() => setSelectedLead(null)} className="p-1 hover:bg-[var(--bg-soft)] rounded-lg transition-colors">

@@ -12,6 +12,8 @@ import {
   Settings,
   Activity,
   MessageSquare,
+  X,
+  LogOut
 } from "lucide-react";
 
 export const menu = [
@@ -31,20 +33,28 @@ export const menu = [
 
 export const bottomMenu = [
   { name: "Settings", icon: Settings, path: "/settings" },
+  { name: "Logout", icon: LogOut, path: "/" },
 ];
 
 
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }: { onClose?: () => void }) {
   return (
     <aside
-      className="w-64 h-screen flex flex-col border-r"
+      className="w-64 h-screen flex flex-col border-r shadow-2xl lg:shadow-none overflow-y-auto no-scrollbar"
       style={{
         background: "var(--bg-sidebar)",
         borderColor: "var(--border)",
       }}
     >
-      <div className="p-6 text-2xl font-bold text-[var(--primary)]">tia</div>
+      <div className="p-6 flex items-center justify-between">
+          <div className="text-2xl font-bold text-[var(--primary)]">tia</div>
+          {onClose && (
+            <button onClick={onClose} className="lg:hidden p-2 hover:bg-[var(--bg-soft)] rounded-lg text-[var(--text-muted)]">
+                <X size={20} />
+            </button>
+          )}
+      </div>
 
       <nav className="flex-1 px-3 space-y-1">
         {menu.map((item) => (

@@ -8,7 +8,7 @@ export default function Topbar() {
 
   return (
     <header
-      className="h-16 flex items-center justify-between px-6 border-b relative z-40"
+      className="h-14 md:h-16 flex items-center justify-between px-4 md:px-6 border-b relative z-40"
       style={{
         background: "var(--bg-card)",
         borderColor: "var(--border)",
@@ -17,7 +17,7 @@ export default function Topbar() {
       <div className="flex items-center gap-4">
         <input
           placeholder="Search anything..."
-          className="bg-[var(--bg-soft)] px-4 py-2 rounded-xl outline-none text-sm w-64 border border-transparent focus:border-[var(--primary)] transition-all"
+          className="hidden md:block bg-[var(--bg-soft)] px-4 py-2 rounded-xl outline-none text-sm w-64 border border-transparent focus:border-[var(--primary)] transition-all"
         />
       </div>
 
@@ -63,7 +63,7 @@ export default function Topbar() {
       {showMessages && (
         <>
             <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50" onClick={() => setShowMessages(false)} />
-            <div className="fixed top-0 right-0 h-full w-96 bg-[var(--bg-card)] shadow-2xl z-50 transform transition-transform border-l overflow-hidden flex flex-col" style={{ borderColor: 'var(--border)' }}>
+            <div className="fixed top-0 right-0 h-full w-full md:w-96 bg-[var(--bg-card)] shadow-2xl z-50 transform transition-transform border-l overflow-hidden flex flex-col" style={{ borderColor: 'var(--border)' }}>
                 <div className="p-6 border-b flex justify-between items-center" style={{ borderColor: 'var(--border)' }}>
                     <h3 className="font-bold text-lg">Quick Broadcast</h3>
                     <button onClick={() => setShowMessages(false)} className="p-1 hover:bg-[var(--bg-soft)] rounded-md transition-colors">
@@ -103,7 +103,7 @@ export default function Topbar() {
       {showNotifications && (
         <>
             <div className="fixed inset-0 z-40" onClick={() => setShowNotifications(false)} />
-            <div className="absolute top-16 right-20 w-80 bg-[var(--bg-card)] border rounded-2xl shadow-xl z-50 overflow-hidden" style={{ borderColor: 'var(--border)' }}>
+            <div className="absolute top-16 right-4 md:right-20 w-[calc(100vw-2rem)] md:w-80 bg-[var(--bg-card)] border rounded-2xl shadow-xl z-50 overflow-hidden" style={{ borderColor: 'var(--border)' }}>
                 <div className="p-4 border-b flex justify-between items-center" style={{ borderColor: 'var(--border)' }}>
                     <span className="font-bold text-sm">Notifications</span>
                     <span className="text-[10px] bg-[var(--primary)]/10 text-[var(--primary)] px-2 py-0.5 rounded-full font-bold">4 NEW</span>

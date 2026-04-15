@@ -75,7 +75,7 @@ export default function Login() {
           {/* Button */}
           <button 
             onClick={() => navigate("/dashboard")}
-            className="w-full py-3 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition-opacity"
+            className="w-full py-3 rounded-lg bg-[var(--primary)] text-white font-semibold hover:opacity-90 transition-opacity"
           >
             Sign in
           </button>

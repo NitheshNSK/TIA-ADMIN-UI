@@ -120,49 +120,51 @@ function ViewCourses() {
           boxShadow: "var(--shadow-card)",
         }}
       >
-        <table className="w-full text-sm">
-          <thead style={{ background: "var(--bg-soft)" }}>
-            <tr className="text-left">
-              <th className="p-4">Course Code</th>
-              <th className="p-4">Concept</th>
-              <th className="p-4">Course Name</th>
-              <th className="p-4">Fee</th>
-              <th className="p-4">Status</th>
-              <th className="p-4 text-right">Action</th>
-            </tr>
-          </thead>
+        <div className="overflow-x-auto no-scrollbar">
+            <table className="w-full text-sm min-w-[700px]">
+                <thead style={{ background: "var(--bg-soft)" }}>
+                    <tr className="text-left">
+                    <th className="p-4">Course Code</th>
+                    <th className="p-4">Concept</th>
+                    <th className="p-4">Course Name</th>
+                    <th className="p-4">Fee</th>
+                    <th className="p-4">Status</th>
+                    <th className="p-4 text-right">Action</th>
+                    </tr>
+                </thead>
 
-          <tbody>
-            {courses.map((c, i) => (
-              <tr
-                key={i}
-                className="border-t"
-                style={{ borderColor: "var(--border)" }}
-              >
-                <td className="p-4">{c.code}</td>
-                <td className="p-4">{c.concept}</td>
-                <td className="p-4">{c.name}</td>
-                <td className="p-4">₹ {c.fee}</td>
+                <tbody>
+                    {courses.map((c, i) => (
+                    <tr
+                        key={i}
+                        className="border-t"
+                        style={{ borderColor: "var(--border)" }}
+                    >
+                        <td className="p-4">{c.code}</td>
+                        <td className="p-4">{c.concept}</td>
+                        <td className="p-4">{c.name}</td>
+                        <td className="p-4">₹ {c.fee}</td>
 
-                <td className="p-4">
-                  <span className="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-400">
-                    {c.status}
-                  </span>
-                </td>
+                        <td className="p-4">
+                        <span className="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-400">
+                            {c.status}
+                        </span>
+                        </td>
 
-                <td className="p-4 flex justify-end gap-3">
-                  <button className="text-[var(--text-muted)] hover:text-[var(--primary)]">
-                    <Pencil size={16} />
-                  </button>
+                        <td className="p-4 flex justify-end gap-3">
+                        <button className="text-[var(--text-muted)] hover:text-[var(--primary)]">
+                            <Pencil size={16} />
+                        </button>
 
-                  <button className="text-red-500">
-                    <Trash2 size={16} />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                        <button className="text-red-500">
+                            <Trash2 size={16} />
+                        </button>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
       </div>
     </div>
   );
